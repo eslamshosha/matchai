@@ -83,9 +83,12 @@ $(document).ready(function () {
   lastScroll = 0;
   $(window).on("scroll load", function () {
     var scroll = $(window).scrollTop();
-    if (lastScroll - scroll >= 0) {
+    if (lastScroll - scroll > 0) {
       $stickyheader.addClass("fixed-header", { duration: 1000 });
-    } else {
+    }else if (lastScroll - scroll >= 0 && $(window).width() <= 991)  {
+      $stickyheader.addClass("fixed-header", { duration: 1000 });
+    }
+     else {
       $stickyheader.removeClass("fixed-header", { duration: 500 });
     }
     lastScroll = scroll;
