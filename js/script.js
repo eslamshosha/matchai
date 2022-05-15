@@ -39,12 +39,38 @@ $(document).ready(function () {
       });
       a = 1;
     }
+    if ($(window).width() <= 767) {
+      $(".counter-num").each(function () {
+        var $this = $(this),
+          countTo = $this.attr("data-count");
+        $({
+          countNum: $this.text(),
+        }).animate(
+          {
+            countNum: countTo,
+          },
+
+          {
+            duration: 2000,
+            easing: "swing",
+            step: function () {
+              $this.text(Math.floor(this.countNum));
+            },
+            complete: function () {
+              $this.text(this.countNum);
+              //alert('finished');
+            },
+          }
+        );
+      });
+      a = 1;
+    }
   });
 
   // end counter //
 
   //phone size menu onclick
-  if ($(window).width() <= 1199) {
+  if ($(window).width() <= 991) {
     $("#menu-id").click(function (e) {
       e.preventDefault();
       $(".overlay-box").fadeToggle(300);
