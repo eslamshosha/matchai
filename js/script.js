@@ -5,65 +5,44 @@ window.onload = function(){
     hint.style.display = 'none';
   },700);
 }
-
 $(document).ready(function () {
   new WOW().init();
   // for counter //
 
   var a = 0;
+  function countFunction() {
+    $(".counter-num").each(function () {
+      var $this = $(this),
+        countTo = $this.attr("data-count");
+      $({
+        countNum: $this.text(),
+      }).animate(
+        {
+          countNum: countTo,
+        },
+
+        {
+          duration: 2000,
+          easing: "swing",
+          step: function () {
+            $this.text(Math.floor(this.countNum));
+          },
+          complete: function () {
+            $this.text(this.countNum);
+            //alert('finished');
+          },
+        }
+      );
+    });
+    a = 1;
+  }
+  if ($(window).width() <= 767) {
+    window.onload(countFunction()) 
+  }
   $(window).scroll(function () {
     var oTop = $(".counter-cont").offset().top - window.innerHeight;
     if (a == 0 && $(window).scrollTop() > oTop) {
-      $(".counter-num").each(function () {
-        var $this = $(this),
-          countTo = $this.attr("data-count");
-        $({
-          countNum: $this.text(),
-        }).animate(
-          {
-            countNum: countTo,
-          },
-
-          {
-            duration: 2000,
-            easing: "swing",
-            step: function () {
-              $this.text(Math.floor(this.countNum));
-            },
-            complete: function () {
-              $this.text(this.countNum);
-              //alert('finished');
-            },
-          }
-        );
-      });
-      a = 1;
-    }
-    if ($(window).width() <= 767) {
-      $(".counter-num").each(function () {
-        var $this = $(this),
-          countTo = $this.attr("data-count");
-        $({
-          countNum: $this.text(),
-        }).animate(
-          {
-            countNum: countTo,
-          },
-
-          {
-            duration: 2000,
-            easing: "swing",
-            step: function () {
-              $this.text(Math.floor(this.countNum));
-            },
-            complete: function () {
-              $this.text(this.countNum);
-              //alert('finished');
-            },
-          }
-        );
-      });
-      a = 1;
+      countFunction();
     }
   });
 
