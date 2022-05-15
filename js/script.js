@@ -56,7 +56,7 @@ $(document).ready(function () {
       $(".navgition").toggleClass("reset-left");
       $("body").toggleClass("overflow");
     });
-    $(".nav-head .close-btn, .overlay-box, .big-menu li a").click(function () {
+    $(".nav-head .close-btn, .overlay-box").click(function () {
       $(".overlay-box").fadeOut(300);
       $(".navgition").removeClass("reset-left");
       $(".menu-bars .bars").toggleClass("open-bars");
@@ -141,11 +141,11 @@ $(document).ready(function () {
     },
     breakpoints: {
       0: {
-        slidesPerView: 2,
+        slidesPerView: 1,
         spaceBetween: 15,
       },
       767: {
-        slidesPerView: 2,
+        slidesPerView: 1,
         spaceBetween: 15,
       },
       992: {

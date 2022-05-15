@@ -37,12 +37,12 @@ img {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: var(--main-color);
+  background: #36A62F;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--main-hover);
+  background: #277721;
 }
 /*preloader*/
 .preloader {
@@ -54,9 +54,8 @@ img {
 }
 .progress {
   position: fixed;
-  z-index: 222000;
+  z-index: 99999;
   top: 0;
-  /* right: 100%; */
   width: 100%;
   height: 5px;
   background-color: #f7f7f7;
@@ -71,20 +70,16 @@ img {
   animation: progress 6s ease infinite;
   padding: 1px;
   color: rgba(255, 255, 255, 100);
-  background-image: linear-gradient(
-    135deg,
-    var(--main-color),
-    var(--main-hover)
-  );
+  background-color: #36A62F;
   /* border-radius: 4px 4px 4px 4px; */
 }
-html[dir="ltr"] .progress-bar {
+/* html[dir="ltr"] .progress-bar {
   background-image: linear-gradient(
     135deg,
     var(--main-hover),
     var(--main-color)
   );
-}
+} */
 @keyframes progress {
   from {
     width: 0;
@@ -494,22 +489,25 @@ html[dir="ltr"] .about-us-link i {
   } */
   html[dir="ltr"] .counter-box .counter-word {
     font-size: 16px;
-    min-height: 48px;
+    min-height: 40px;
     margin-bottom: 0px;
   }
-  html[dir="ltr"] .counter-box .number-cont {
-    font-size: 56px;
-    line-height: 56px;
+  .counter-box .number-cont {
+    font-size: 48px;
+    line-height: 48px;
   }
   .about-us-content {
     flex-wrap: wrap;
   }
-  .counter-box {
+  /* .counter-box {
     text-align: center;
-  }
+  } */
   .about-us-cont,
   .counter-cont {
     width: 100%;
+  }
+  .counter-cont{
+    justify-content: flex-start;
   }
   .about-us-cont {
     margin-bottom: 30px;
@@ -567,13 +565,17 @@ html[dir="ltr"] .about-us-link i {
 .features-box:last-of-type {
   margin-bottom: 0;
 }
+.features-box figure{
+  margin: 0;
+  margin-inline-end: 20px;
+  max-width: 49px;
+  flex-shrink: 0;
+}
 .features-word {
   text-align: start;
   padding-top: 10px;
 }
 .features-icon {
-  margin-inline-end: 20px;
-  flex-shrink: 0;
   transition: all 0.3s ease-in-out;
 }
 .features-icon:hover {
@@ -895,6 +897,9 @@ footer {
   margin-bottom: 30px;
   text-align: center;
 }
+.footer-figure img{
+  max-width: 341px;
+}
 .nav-foot {
   display: flex;
   align-items: center;
@@ -977,6 +982,9 @@ a.social-link:hover {
   .nav-foot li {
     margin: 0 0 10px;
   }
+  .footer-figure img{
+    max-width: 270px;
+  }
 }
 /*                                   footer                            */
 /*                                    media query                                    */
@@ -1056,7 +1064,7 @@ a.social-link:hover {
     justify-content: flex-start;
     text-align: center;
     align-items: center;
-    padding: 30% 20px 20px;
+    padding: 40% 20px 20px;
     height: 100%;
   }
   .nav-header li {
