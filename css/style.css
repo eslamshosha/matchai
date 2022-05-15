@@ -414,7 +414,7 @@ header {
 .about-title h3 {
   font-weight: 700;
   font-size: 36px;
-  text-transform: uppercase;
+  text-transform: capitalize;
   margin-bottom: 40px;
   color: var(--main-color);
   text-align: start;
@@ -488,6 +488,18 @@ html[dir="ltr"] .about-us-link i {
   .about-title h3 {
     font-size: var(--font-sm);
     margin-bottom: 30px;
+  }
+  /* html[dir="ltr"] .about-title h3 {
+    font-size: 20px;
+  } */
+  html[dir="ltr"] .counter-box .counter-word {
+    font-size: 16px;
+    min-height: 48px;
+    margin-bottom: 0px;
+  }
+  html[dir="ltr"] .counter-box .number-cont {
+    font-size: 56px;
+    line-height: 56px;
   }
   .about-us-content {
     flex-wrap: wrap;
@@ -586,9 +598,6 @@ html[dir="ltr"] .about-us-link i {
     position: relative;
     padding: 60px 0 50px;
   }
-  html[dir="ltr"] .about-title h3 {
-    font-size: 20px;
-  }
   .features-img-cont {
     position: relative;
     width: 100%;
@@ -607,15 +616,7 @@ html[dir="ltr"] .about-us-link i {
   .features-box {
     margin-bottom: 30px;
   }
-  html[dir="ltr"] .counter-box .counter-word {
-    font-size: 16px;
-    min-height: 48px;
-    margin-bottom: 0px;
-  }
-  html[dir="ltr"] .counter-box .number-cont {
-    font-size: 56px;
-    line-height: 56px;
-  }
+  
 }
 /*                      features-section                      */
 /*                      product-section                      */
